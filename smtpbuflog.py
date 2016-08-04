@@ -167,7 +167,6 @@ class BufferingSMTPHandler(logging.Handler):
                 body += '\r\n'
                 body += '\r\n'.join(records)
                 msg = self._header['header'] + body
-                print("%s sending email" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                 smtp = smtplib.SMTP(self.mail_host)
                 if self.TLS:
                     smtp.starttls()
